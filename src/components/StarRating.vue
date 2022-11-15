@@ -27,6 +27,6 @@ export default {
   width: 16px;
   height: 16px;
   margin-right: 5px;
-  background: url("/public/images/star.svg") center no-repeat;
+  background: url("../assets/svg/star.svg") center no-repeat;
 }
 </style>

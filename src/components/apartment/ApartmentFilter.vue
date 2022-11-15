@@ -58,5 +58,6 @@ export default {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 39px;
+  padding-top: 60px;
 }
 </style>
