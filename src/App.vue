@@ -1,34 +1,31 @@
 <template>
-  <h3>{{ searchText }}</h3>
-  <CustomInput v-model="searchText" />
-  <CustomSelect :items="['aaaaa', 'bbbbb', 'cccccc']" />
+  <ApartmentFilter @submit.prevent="logger" />
   <ApartmentsList :items="apartments" />
 </template>
 
 <script>
 import ApartmentsList from "./components/apartment/ApartmentsList.vue";
 import apartments from "./mock/apartments";
-import CustomInput from "./components/shared/CustomInput.vue";
-import CustomSelect from "./components/shared/CustomSelect.vue";
+import ApartmentFilter from "./components/apartment/ApartmentFilter.vue";
 
 export default {
   name: "App",
   components: {
     ApartmentsList,
-    CustomInput,
-    CustomSelect,
+    ApartmentFilter,
   },
   data() {
     return {
-      searchText: "",
+      // searchText: "",
       apartments,
     };
   },
+  methods: {
+    logger(e) {
+      // e.preventDefault();
+      console.log("APP LOGGER!!!! ----> ", e.target.elements[1].value);
+      console.log("APP LOGGER!!!! ----> ", e.target.elements[0].value);
+    },
+  },
 };
 </script>
-
-<style>
-/* #app {
-
-} */
-</style>

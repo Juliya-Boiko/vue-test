@@ -1,0 +1,61 @@
+<template>
+  <MainContainer>
+    <form class="filter-form" @submit.prevent="handleSubmit">
+      <h3>Apartment Filter</h3>
+      <CustomSelect :items="cities" v-model="city" />
+      <CustomInput v-model="price" />
+      <PrimaryBtn type="submit" title="Підбір житла" />
+    </form>
+  </MainContainer>
+</template>
+
+<script>
+import MainContainer from "../shared/MainContainer.vue";
+import PrimaryBtn from "../PrimaryBtn.vue";
+import CustomSelect from "../shared/CustomSelect.vue";
+import CustomInput from "../shared/CustomInput.vue";
+export default {
+  name: "ApartmentFilter",
+  components: {
+    MainContainer,
+    PrimaryBtn,
+    CustomSelect,
+    CustomInput,
+  },
+  data() {
+    return {
+      price: 0,
+      city: "",
+    };
+  },
+  methods: {
+    handleSubmit() {
+      // console.log("this.price ---->", this.price);
+      // console.log("this.city ---->", this.city);
+
+      //console.log("FILTER FORM SUBMIT");
+      //this.$emit("submit", "form submitted");
+    },
+  },
+  computed: {
+    cities() {
+      return [
+        { value: "", label: "Місто", selected: true },
+        "Kherson",
+        "Kyiv",
+        "Lviv",
+        "Kharkiv",
+      ];
+    },
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+.filter-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 39px;
+}
+</style>

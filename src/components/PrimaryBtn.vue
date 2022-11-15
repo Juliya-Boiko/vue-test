@@ -1,5 +1,5 @@
 <template>
-  <button :type="type" class="btnAccent">Вхід</button>
+  <button :type="type" class="btnAccent">{{ title }}</button>
 </template>
 
 <script>
@@ -9,6 +9,9 @@ export default {
     type: {
       type: String,
       default: "button",
+    },
+    title: {
+      type: String,
       required: true,
     },
   },

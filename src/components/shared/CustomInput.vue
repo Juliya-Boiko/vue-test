@@ -1,18 +1,22 @@
 <template>
   <!-- <input v-bind="attrs" /> -->
   <input
+    placeholder="Вартість, від"
     class="custom-input"
-    placeholder="Email"
-    :value="modelValue"
-    @input="$emit('update:modelValue', $event.target.value)"
+    :value="price"
+    @input="$emit('update:price', $event.target.value)"
   />
 </template>
 
 <script>
 export default {
   name: "CustomInput",
-  props: ["modelValue"],
-  emits: ["update:modelValue"],
+  props: {
+    price: {
+      type: String,
+    },
+  },
+  emits: ["update:price"],
 };
 </script>
 
