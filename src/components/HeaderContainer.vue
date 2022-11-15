@@ -3,6 +3,10 @@
     <MainContainer>
       <div class="header-content">
         <LogoIcon />
+        <div class="profile">
+          <p class="profile__text">Профіль</p>
+          <img src="../assets/svg/user.svg" alt="" />
+        </div>
       </div>
     </MainContainer>
   </header>
@@ -34,5 +38,14 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.profile__text {
+  margin-right: 10px;
 }
 </style>
