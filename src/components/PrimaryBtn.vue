@@ -16,6 +16,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../assets/scss/variables.scss";
+
 .btnAccent {
   width: 350px;
   height: 50px;
@@ -25,10 +27,7 @@ export default {
   font-size: 18px;
   line-height: 21px;
   border: none;
-  color: #ffffff;
-  background-color: #ff662d;
-}
-.test {
-  background-color: aqua;
+  color: $secondary-color;
+  background-color: $accent-color;
 }
 </style>

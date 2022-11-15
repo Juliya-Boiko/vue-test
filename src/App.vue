@@ -1,30 +1,27 @@
 <template>
-  <div>
-    <ApartmentItem
-      :photo="apartment.photo"
-      :description="apartment.description"
-      :price="apartment.price"
-      :rating="apartment.rating"
-    />
-  </div>
+  <h3>{{ searchText }}</h3>
+  <CustomInput v-model="searchText" />
+  <CustomSelect :items="['aaaaa', 'bbbbb', 'cccccc']" />
+  <ApartmentsList :items="apartments" />
 </template>
 
 <script>
-import ApartmentItem from "./components/apartment/ApartmentItem.vue";
+import ApartmentsList from "./components/apartment/ApartmentsList.vue";
+import apartments from "./mock/apartments";
+import CustomInput from "./components/shared/CustomInput.vue";
+import CustomSelect from "./components/shared/CustomSelect.vue";
+
 export default {
   name: "App",
   components: {
-    ApartmentItem,
+    ApartmentsList,
+    CustomInput,
+    CustomSelect,
   },
   data() {
     return {
-      apartment: {
-        description:
-          "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo nobis quasi cupiditate hic soluta laborum corporis est velit sit animi?",
-        photo: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
-        price: 1200,
-        rating: 3,
-      },
+      searchText: "",
+      apartments,
     };
   },
 };

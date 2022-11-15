@@ -1,6 +1,6 @@
 <template>
-  <div class="apartment-card">
-    <img class="apartment-card__photo" :src="photo" alt="" />
+  <div class="apartment-card" @click="log($event)">
+    <img class="apartment-card__photo" :src="imgUrl" alt="" />
     <div class="apartment-card__overlay">
       <p class="apartment-card__text">{{ description }}</p>
       <StarRating class="apartment-card__rating" :rating="rating" />
@@ -30,9 +30,14 @@ export default {
       type: Number,
       default: 0,
     },
-    photo: {
+    imgUrl: {
       type: String,
       default: "",
+    },
+  },
+  methods: {
+    log($event) {
+      console.log("event --->", $event);
     },
   },
 };
@@ -42,6 +47,7 @@ export default {
 .apartment-card {
   position: relative;
   max-width: 350px;
+  height: 200px;
 
   &:hover {
     .apartment-card__overlay {
@@ -61,17 +67,19 @@ export default {
 
 .apartment-card__overlay {
   position: relative;
+  height: 160px;
   padding: 20px;
   opacity: 0;
   transition: opacity 0.4s;
   background: rgba(#0f1d2d, 0.7);
-  min-height: 200px;
   color: #fff;
   text-align: left;
   cursor: pointer;
 }
 
 .apartment-card__text {
+  max-height: calc(1em * 1.2 * 4);
+  overflow: hidden;
   margin-bottom: 20px;
   font-weight: 500;
   font-size: 16px;
