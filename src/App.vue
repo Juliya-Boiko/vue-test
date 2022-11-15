@@ -1,42 +1,37 @@
 <template>
   <div>
-    <h1>{{ title }}</h1>
-    <PrimaryBtn @click="increment" />
+    <ApartmentItem
+      :photo="apartment.photo"
+      :description="apartment.description"
+      :price="apartment.price"
+      :rating="apartment.rating"
+    />
   </div>
 </template>
 
 <script>
-import PrimaryBtn from "./components/PrimaryBtn.vue";
+import ApartmentItem from "./components/apartment/ApartmentItem.vue";
 export default {
   name: "App",
   components: {
-    PrimaryBtn,
+    ApartmentItem,
   },
   data() {
     return {
-      amountOfClicks: 0,
+      apartment: {
+        description:
+          "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo nobis quasi cupiditate hic soluta laborum corporis est velit sit animi?",
+        photo: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
+        price: 1200,
+        rating: 3,
+      },
     };
-  },
-  computed: {
-    title() {
-      return `amount of clicks ${this.amountOfClicks}`;
-    },
-  },
-  methods: {
-    increment() {
-      this.amountOfClicks += 1;
-    },
   },
 };
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+/* #app {
+
+} */
 </style>
