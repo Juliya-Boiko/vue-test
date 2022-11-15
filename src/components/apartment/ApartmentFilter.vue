@@ -32,7 +32,6 @@ export default {
     handleSubmit() {
       // console.log("this.price ---->", this.price);
       // console.log("this.city ---->", this.city);
-
       //console.log("FILTER FORM SUBMIT");
       //this.$emit("submit", "form submitted");
     },
@@ -41,10 +40,12 @@ export default {
     cities() {
       return [
         { value: "", label: "Місто", selected: true },
-        "Kherson",
-        "Kyiv",
-        "Lviv",
+        "Dnipro",
+        "Poltava",
         "Kharkiv",
+        "Mariupol",
+        "Odesa",
+        "Kyiv",
       ];
     },
   },

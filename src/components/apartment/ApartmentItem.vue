@@ -1,5 +1,5 @@
 <template>
-  <div class="apartment-card" @click="log($event)">
+  <div class="apartment-card">
     <img class="apartment-card__photo" :src="imgUrl" alt="" />
     <div class="apartment-card__overlay">
       <p class="apartment-card__text">{{ description }}</p>
@@ -33,11 +33,6 @@ export default {
     imgUrl: {
       type: String,
       default: "",
-    },
-  },
-  methods: {
-    log($event) {
-      console.log("event --->", $event);
     },
   },
 };
