@@ -11,7 +11,7 @@
 
 <script>
 import MainContainer from "../shared/MainContainer.vue";
-import PrimaryBtn from "../PrimaryBtn.vue";
+import PrimaryBtn from "../shared/PrimaryBtn.vue";
 import CustomSelect from "../shared/CustomSelect.vue";
 import CustomInput from "../shared/CustomInput.vue";
 export default {
@@ -30,10 +30,6 @@ export default {
   },
   methods: {
     handleSubmit() {
-      // console.log("this.price ---->", this.price);
-      // console.log("this.city ---->", this.city);
-      //console.log("FILTER FORM SUBMIT");
-      //this.$emit("submit", "form submitted");
     },
   },
   computed: {

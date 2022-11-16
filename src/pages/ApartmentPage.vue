@@ -1,19 +1,27 @@
 <template>
   <div class="content">
     <MainContainer>
-      <h2 class="title">ApartmentPage</h2>
+      <!-- <h2 class="title">ApartmentPage</h2> -->
+      <ApartmentInfo :apartment="apartment" />
     </MainContainer>
   </div>
 </template>
 
 <script>
 import MainContainer from "@/components/shared/MainContainer.vue";
+import apartments from "@/mock/apartments";
+import ApartmentInfo from "@/components/apartment/ApartmentInfo.vue";
 
 export default {
   name: "ApartmentPage",
-  components: { MainContainer },
+  components: { MainContainer, ApartmentInfo },
+  computed: {
+    apartment() {
+      return apartments.find((item) => item.id === this.$route.params.id);
+    },
+  },
   mounted() {
-    //console.log(this.$router);
+    console.log("this.apartment --->", this.apartment);
     //console.log(this.$route);
   },
 };
