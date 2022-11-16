@@ -12,6 +12,10 @@ import MainContainer from "@/components/shared/MainContainer.vue";
 export default {
   name: "ApartmentPage",
   components: { MainContainer },
+  mounted() {
+    //console.log(this.$router);
+    //console.log(this.$route);
+  },
 };
 </script>
 

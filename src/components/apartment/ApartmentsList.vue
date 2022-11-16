@@ -4,6 +4,7 @@
       <ApartmentItem
         v-for="{ id, imgUrl, descr, price, rating } in items"
         :key="id"
+        :id="id"
         :imgUrl="imgUrl"
         :description="descr"
         :price="price"

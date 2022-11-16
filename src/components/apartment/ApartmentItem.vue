@@ -5,7 +5,10 @@
       <p class="apartment-card__text">{{ description }}</p>
       <StarRating class="apartment-card__rating" :rating="rating" />
       <p class="apartment-card__price">UAH {{ price }} за ночь</p>
-      <router-link :to="{ name: 'apartment' }" class="apartment-card__link"></router-link>
+      <router-link
+        :to="{ name: 'apartment', params: { id } }"
+        class="apartment-card__link"
+      ></router-link>
     </div>
   </div>
 </template>
@@ -19,6 +22,10 @@ export default {
     StarRating,
   },
   props: {
+    id: {
+      type: String,
+      required: true,
+    },
     description: {
       type: String,
       default: "",
