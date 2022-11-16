@@ -5,6 +5,7 @@
       <p class="apartment-card__text">{{ description }}</p>
       <StarRating class="apartment-card__rating" :rating="rating" />
       <p class="apartment-card__price">UAH {{ price }} за ночь</p>
+      <router-link :to="{ name: 'apartment' }" class="apartment-card__link"></router-link>
     </div>
   </div>
 </template>
@@ -89,5 +90,13 @@ export default {
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
+}
+
+.apartment-card__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 </style>

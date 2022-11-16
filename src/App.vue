@@ -7,9 +7,6 @@
 </template>
 
 <script>
-//import ApartmentsList from "./components/apartment/ApartmentsList.vue";
-//import apartments from "./mock/apartments";
-//import ApartmentFilter from "./components/apartment/ApartmentFilter.vue";
 import FooterContainer from "./components/FooterContainer.vue";
 import HeaderContainer from "./components/HeaderContainer.vue";
 
@@ -17,8 +14,6 @@ export default {
   name: "App",
   components: {
     HeaderContainer,
-    //ApartmentsList,
-    //ApartmentFilter,
     FooterContainer,
   },
 };

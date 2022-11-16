@@ -1,17 +1,14 @@
-//import VueRouter from 'vue-router';
 import { createRouter, createWebHistory } from 'vue-router';
 
 import HomePage from "./pages/HomePage.vue";
-import AboutPage from "./pages/AboutPage.vue";
+import ApartmentPage from "./pages/ApartmentPage.vue";
 
 const routes = [
-  { path: '/', name: 'Homepage', component: HomePage },
-  { path: '/about', name: 'Aboutpage', component: AboutPage },
+  { path: '/', name: 'homepage', component: HomePage },
+  { path: '/apartment', name: 'apartment', component: ApartmentPage },
 ]
 
 export const router = createRouter({
   history: createWebHistory(),
   routes, // short for `routes: routes`
 });
-
-//export default router;
